@@ -5,7 +5,7 @@ const router = Router()
 
 router.get("/listar-usuarios", async (req, res) => {
     try {
-        const users = await User.find({})
+        const users = await User.find({}).sort({ name: 1})
 
         res.status(200).json(users)
     } catch (erro) {
