@@ -21,6 +21,12 @@ router.post("/cadastrar", async (req, res) => {
             return res.status(500).json({ message: "A palavra passe do usuário precisa ser preenchido!" })
         }
 
+        const emailExist = await User.findOne({email: email})
+
+        if(emailExist) {
+            return res.status(500).json({message: "Esse email já está cadastrado, use outro!"})
+        }
+
         const saltRound = await bycript.genSalt(10)
         const passwordHash = await bycript.hash(password, saltRound)
 
