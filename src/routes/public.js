@@ -19,7 +19,7 @@ router.post("/cadastrar", async (req, res) => {
         }
 
         if (!emailReg.test(email)) {
-            return res.status(200).json("Insira um email válido, sem caraacteres especiais dierente de (_ - .)")
+            return res.status(500).json("Insira um email válido, sem caracteres especiais dierente de (_ - .)")
         }
 
         if (!password) {

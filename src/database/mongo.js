@@ -7,7 +7,7 @@ async function connectBD(app)
 {
     try {
         await mongoose.connect(urlDB)
-        app.listen(3000, () => console.log("Servidor ligado 🚀 & banco de dados conectado 🔥"))
+        app.listen(4000, () => console.log("Servidor ligado 🚀 & banco de dados conectado 🔥"))
     } catch(erro) {
         console.log("Erro ao connectar ao banco de dados!")
     }
